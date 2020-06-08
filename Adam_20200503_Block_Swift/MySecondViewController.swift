@@ -24,22 +24,12 @@ class MySecondViewController: HYBaseViewController {
     
     var closure: Closure?
     
+    var transfer: String?
+    
     func callBack(closure: Closure!) -> Void {
         self.closure = closure
     }
-//
-//    init(block: @escaping InfoBlock) {
-//        self.block = block
-//        super.init(nibName: "Main", bundle: nil)
-//    }
-//    init() {
-//        super.init(nibName: "Main", bundle: nil)
-//        self.block("20")
-//    }
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Input"
@@ -48,11 +38,25 @@ class MySecondViewController: HYBaseViewController {
     }
     
     deinit {
+        let tag = Int.randomIntNumber(lower: 1, upper: 100)
         if let delegate = self.delegate {
-            delegate.viewController!(self, dismissWithValue:"321")
+            delegate.viewController!(self, dismissWithValue:"代理回传 - 序号:\(tag)")
         }
-        if let closure = self.closure {
-            closure("123456")
+        else if let closure = self.closure {
+            closure("闭包回传 - 序号:\(tag)")
+        }
+        else if self.transfer == "UserDefaults" {
+            let userDefaults = UserDefaults.standard
+            //数据记录
+            
+            let selectedIndex = "UserDefaults 回传数据 - 序号:\(tag)"
+            //写入plist文件
+            userDefaults.set(selectedIndex, forKey: "selectedIndex")
+            //回写文件
+            userDefaults.synchronize()
+        }
+        else {
+            NotificationCenter.default.post(name: NSNotification.Name.init("sendValue"), object: "通知传递过来的值 - 序号:\(tag)")
         }
     }
 
@@ -66,14 +70,4 @@ class MySecondViewController: HYBaseViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

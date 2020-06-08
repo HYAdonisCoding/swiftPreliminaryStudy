@@ -16,6 +16,7 @@
 		0C2BA424245F0E5800FAF6A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C2BA423245F0E5800FAF6A4 /* Assets.xcassets */; };
 		0C2BA427245F0E5800FAF6A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C2BA425245F0E5800FAF6A4 /* LaunchScreen.storyboard */; };
 		0C2BA42F245F0F1400FAF6A4 /* MySecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2BA42E245F0F1400FAF6A4 /* MySecondViewController.swift */; };
+		669BFA31248DDB86003E9573 /* HYEfficientUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669BFA30248DDB86003E9573 /* HYEfficientUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		0C2BA426245F0E5800FAF6A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C2BA428245F0E5800FAF6A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C2BA42E245F0F1400FAF6A4 /* MySecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySecondViewController.swift; sourceTree = "<group>"; };
+		669BFA30248DDB86003E9573 /* HYEfficientUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HYEfficientUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,11 +64,12 @@
 		0C2BA416245F0E5400FAF6A4 /* Adam_20200503_Block_Swift */ = {
 			isa = PBXGroup;
 			children = (
+				669BFA32248DDCD4003E9573 /* Base */,
+				669BFA2F248DDB3B003E9573 /* Utils */,
 				0C2BA417245F0E5400FAF6A4 /* AppDelegate.swift */,
 				0C2BA419245F0E5400FAF6A4 /* SceneDelegate.swift */,
 				0C2BA41B245F0E5400FAF6A4 /* MyFirstViewController.swift */,
 				0C2BA42E245F0F1400FAF6A4 /* MySecondViewController.swift */,
-				0C154094248BA151004F2215 /* HYBaseViewController.swift */,
 				0C2BA41D245F0E5400FAF6A4 /* Main.storyboard */,
 				0C2BA423245F0E5800FAF6A4 /* Assets.xcassets */,
 				0C2BA425245F0E5800FAF6A4 /* LaunchScreen.storyboard */,
@@ -74,6 +77,22 @@
 				0C2BA420245F0E5400FAF6A4 /* Adam_20200503_Block_Swift.xcdatamodeld */,
 			);
 			path = Adam_20200503_Block_Swift;
+			sourceTree = "<group>";
+		};
+		669BFA2F248DDB3B003E9573 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				669BFA30248DDB86003E9573 /* HYEfficientUtils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		669BFA32248DDCD4003E9573 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				0C154094248BA151004F2215 /* HYBaseViewController.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -102,6 +121,7 @@
 		0C2BA40C245F0E5400FAF6A4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = HY;
 				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = Adam;
@@ -150,6 +170,7 @@
 				0C154095248BA151004F2215 /* HYBaseViewController.swift in Sources */,
 				0C2BA41C245F0E5400FAF6A4 /* MyFirstViewController.swift in Sources */,
 				0C2BA42F245F0F1400FAF6A4 /* MySecondViewController.swift in Sources */,
+				669BFA31248DDB86003E9573 /* HYEfficientUtils.swift in Sources */,
 				0C2BA418245F0E5400FAF6A4 /* AppDelegate.swift in Sources */,
 				0C2BA422245F0E5400FAF6A4 /* Adam_20200503_Block_Swift.xcdatamodeld in Sources */,
 				0C2BA41A245F0E5400FAF6A4 /* SceneDelegate.swift in Sources */,
