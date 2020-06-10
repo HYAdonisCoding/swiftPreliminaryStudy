@@ -16,17 +16,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="71X-LZ-uN2">
-                                <rect key="frame" x="20" y="108" width="374" height="200"/>
+                                <rect key="frame" x="20" y="108" width="374" height="40"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="pZ9-OQ-Isz"/>
+                                    <constraint firstAttribute="height" constant="40" id="pZ9-OQ-Isz"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fut-ly-kpc">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fut-ly-kpc">
                                 <rect key="frame" x="176" y="431" width="65" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="GETInfo">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -39,9 +39,11 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="fut-ly-kpc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="176" id="AYQ-kI-wjO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="71X-LZ-uN2" secondAttribute="trailing" constant="20" id="Xxo-HD-tyh"/>
                             <constraint firstItem="71X-LZ-uN2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="nid-pf-7kj"/>
                             <constraint firstItem="71X-LZ-uN2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="nt7-ma-9fi"/>
+                            <constraint firstItem="fut-ly-kpc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="oS1-t6-Inw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

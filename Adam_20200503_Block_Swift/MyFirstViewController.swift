@@ -47,7 +47,7 @@ class MyFirstViewController: HYBaseViewController {
     }
     
     func makeInterface() -> Void {
-        let tableView = UITableView.init(frame: CGRect.init(x: 0, y: infoLabel.frame.origin.y+infoLabel.frame.size.height, width: self.view.frame.size.width, height: self.view.frame.size.height-infoLabel.frame.size.height), style: UITableView.Style.plain)
+        let tableView = UITableView.init(frame: CGRect.init(x: 0, y: infoLabel.frame.origin.y+infoLabel.frame.size.height + 20, width: self.view.frame.size.width, height: self.view.frame.size.height-infoLabel.frame.size.height), style: UITableView.Style.plain)
         tableView.delegate = self
         tableView.dataSource = self
         self.view .addSubview(tableView)
@@ -77,6 +77,7 @@ extension MyFirstViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
+        cell.backgroundColor = UIColor.randomColor
         cell.textLabel?.text = self.data[indexPath.row]["title"]
         return cell
 
@@ -89,20 +90,34 @@ extension MyFirstViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView .deselectRow(at: indexPath, animated: true)
         let title = self.data[indexPath.row]["title"]
-        print(title!)
-        operation = title!
-        let vc = MySecondViewController.init()
-        if title == "Delegate" {
-            vc.delegate = self
-        } else if title == "Closure" {
-            vc.callBack { (value) in
-                self.infoLabel.text = value
-            }
-        } else if title == "Notification" {
-            addNotification()
-        } else if title == "UserDefaults" {
-            vc.transfer = title
-        }
+        let name = self.data[indexPath.row]["vc"]!
+        print(title!, name)
+        self.operation = title!
+        //动态获取命名空间
+        let namespace = Bundle.main.infoDictionary!["CFBundleExecutable"] as! String
+        print(namespace)
+        //注意工程中必须有相关的类，否则程序会crash
+        let classOf: AnyObject = NSClassFromString(namespace + "." + name)!
+        print(classOf)
+        // 告诉编译器它的真实类型
+        let viewControllerClass = classOf as! UIViewController.Type
+        let vc = viewControllerClass.init()
+        print(vc)
+        vc.title = title!
+////        let vc = MySecondViewController.init()
+//        if title == "Delegate" {
+//            if vc.supplementalTarget(forAction: #selector(setDelegate:), sender: nil) {
+//            }
+//            vc.delegate = self
+//        } else if title == "Closure" {
+//            vc.callBack { (value) in
+//                self.infoLabel.text = value
+//            }
+//        } else if title == "Notification" {
+//            addNotification()
+//        } else if title == "UserDefaults" {
+//            vc.transfer = title
+//        }
         self.navigationController?.pushViewController(vc, animated: true)
         
     }

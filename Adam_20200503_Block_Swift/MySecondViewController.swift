@@ -32,7 +32,7 @@ class MySecondViewController: HYBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Input"
+        self.navigationItem.title = self.title
         
         // Do any additional setup after loading the view.
     }
