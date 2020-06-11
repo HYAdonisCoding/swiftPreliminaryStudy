@@ -21,38 +21,28 @@ class HYBaseViewController: UIViewController {
         super.viewDidLoad()
         
 
-        print("\(self) \(#function) \(getCuttentTime())")
+        HYLog("\(self.classForCoder) | coming...")
         self.view.backgroundColor = UIColor.systemTeal
         // Do any additional setup after loading the view.
     }
     
     deinit {
-        print("\(self) \(#function) \(getCuttentTime())")
+        HYLog("\(self.classForCoder) | leaved...")
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("\(self) \(#function) \(getCuttentTime())")
+//        HYLog("\(self.classForCoder) | coming...")
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        print("\(self) \(#function) \(getCuttentTime())")
+//        HYLog("\(self.classForCoder) | leaving...")
     }
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        print("\(self) \(#function) \(getCuttentTime())")
+//        HYLog("\(self.classForCoder) | leaved...")
     }
         
-    /// 获取时间
-    func getCuttentTime() -> String {
-
-        let dateformatter = DateFormatter()
-
-        dateformatter.dateFormat = "YYYY-MM-dd HH:mm:ss"// 自定义时间格式
-
-        let time = dateformatter.string(from: Date())
-        return time
-    }
     /*
     // MARK: - Navigation
 

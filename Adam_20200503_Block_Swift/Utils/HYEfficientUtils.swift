@@ -9,6 +9,27 @@
 import Foundation
 import UIKit
 
+//封装的日志输出功能（T表示不指定日志信息参数类型）
+func HYLog<T>(_ message:T, file:String = #file, function:String = #function,
+           line:Int = #line) {
+    #if DEBUG
+        //获取文件名
+        let fileName = (file as NSString).lastPathComponent
+        //打印日志内容
+        print("\(fileName):\(line) \(function) | time:\(getCuttentTime())| \(message)")
+    #endif
+}
+/// 获取时间
+func getCuttentTime() -> String {
+
+    let dateformatter = DateFormatter()
+
+    dateformatter.dateFormat = "YYYY-MM-dd HH:mm:ss"// 自定义时间格式
+
+    let time = dateformatter.string(from: Date())
+    return time
+}
+
 public extension Int {
     /*这是一个内置函数
      lower : 内置为 0，可根据自己要获取的随机数进行修改。

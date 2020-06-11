@@ -24,8 +24,19 @@ class MySecondViewController: HYBaseViewController {
     
     var closure: Closure?
     
-    var transfer: String?
+    var _transfer: String?
     
+    var transfer: String? {
+        get {
+            return _transfer
+        }
+        set {
+            _transfer = newValue
+        }
+    }
+    @objc func configTranfer(_ transfer: String) -> Void {
+        self.transfer = transfer
+    }
     func callBack(closure: Closure!) -> Void {
         self.closure = closure
     }
